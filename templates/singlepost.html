@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 align='center'>{{post.title}}</h1>
-<p>
-      {{post.body}}
-</p>
+
+
+  <h1 align='center'>{{post.title}}</h1>
+
+    <form id= "each_user" action= "/singleUser">
+      Written by:
+      <input form= "each_user" type= "submit"
+          class= "link_button" name= "user_link"
+          value= "{{ author }}"/>
+    </form>
+
+  <p>
+    {{post.body}}
+  </p>
+
 {% endblock %}
-      
