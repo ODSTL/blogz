@@ -48,7 +48,7 @@ def index():
 
 @app.route("/newpost", methods= ['POST', 'GET'])
 def AddPost():
-    error = {"title_blank": "", "body_blank": ""}
+    error = {"t_blank": "", "b_blank": ""}
     new_body = ""
     new_title = ""
 
@@ -75,7 +75,7 @@ def AddPost():
         return render_template('newpost.html')
 
 @app.route("/all_blogs", methods=['GET'])
-def AllBlogs():    
+def AllBlogs():
     if request.args:
         id = request.args.get ('id')
         post = Blog.query.get(id)
