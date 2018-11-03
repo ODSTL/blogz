@@ -75,7 +75,7 @@ def AddPost():
         return render_template('newpost.html')
 
 @app.route("/all_blogs", methods=['GET'])
-def AllBlogs():
+def AllBlogs():    
     if request.args:
         id = request.args.get ('id')
         post = Blog.query.get(id)
