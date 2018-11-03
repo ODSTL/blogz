@@ -2,30 +2,21 @@
 
 {% block content %}
 
-  <h1>Blogz</h1>
+    <h1>Blogz</h1>
 
-  <table>
-    <thead>
-      <td>
-        <p><b>Title:</b></p>
-      </td>
-      <td>
-        <p><b>Body:</b></p>
-      </td>
-    </thead>
-  {% for blog in blogs %}
-    <form id= "each_blog" action= "singlepost">
-      <tr>
-        <td>
-          <input form= "each_blog" type= "submit"
-                class= "link_button" name= "blog_title"
-                value= "{{ blog.title }}"/>
-        </td>
-          {{ blog.body }}
-      </tr>
-    </form>
-  {% endfor %}
+    <ul>
+      {% for post in blogs %}
 
-  </table>
+      <h2>
+        <a href='/all_blogs?id={{blog.id}}'>{{post.title}}</a>
+      <h2>
+
+      <p>{{post.body}}</p>
+
+      <p class='post-writer'></p>
+      <p>Author:
+        <a href='singleUser?user={{post.owner.id}}'>{{post.owner.username}}</a>
+      </p>
+      {% endfor %}
 
 {% endblock %}

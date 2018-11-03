@@ -2,18 +2,15 @@
 
 {% block content %}
 
+    <h1>Blogz</h1>
 
-  <h1 align='center'>{{post.title}}</h1>
+    <h2 class='post-title'>{{post.title}}</h2>
 
-    <form id= "each_user" action= "/singleUser">
-      Written by:
-      <input form= "each_user" type= "submit"
-          class= "link_button" name= "user_link"
-          value= "{{ author }}"/>
-    </form>
+    <p class='post-body'>{{post.body}}</p>
 
-  <p>
-    {{post.body}}
-  </p>
+    <p class='post-writer'></p>
+      'Written by:'
+      <a href='singleUser?user={{post.owner.id}}'>{{post.owner.username}}</a>
+    </p>
 
 {% endblock %}
