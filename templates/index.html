@@ -2,15 +2,14 @@
 
 {% block content %}
 
-    <h1>Blogz</h1>
-      <ol>
+    <ol>
 
-        {% for user in users %}
+      {% for user in users %}
 
-          <li><a href='singleUser?user={{user.id}}'>{{user.username}}</a></li>
+        <li><a href='singleUser?user={{user.id}}'>{{user.username}}</a></li>
 
-        {% endfor %}
+      {% endfor %}
 
-      </ol>
+    </ol>
 
 {% endblock %}

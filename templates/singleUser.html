@@ -2,8 +2,6 @@
 
 {% block content %}
 
-    <h1>Blogz</h1>
-
     <ul>
       {% for post in blogs %}
 
@@ -18,5 +16,6 @@
         <a href='singleUser?user={{post.owner.id}}'>{{post.owner.username}}</a>
       </p>
       {% endfor %}
+    </ul>
 
 {% endblock %}
