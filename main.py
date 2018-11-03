@@ -90,7 +90,7 @@ def SingleUser():
     user = request.args.get('user')
     blogs = Blog.query.filter_by(owner_id= user).all()
 
-    return render_template("singleUser.html", blogs= blogs)
+    return render_template('singleUser.html', blogs= blogs)
 
 @app.route("/signup", methods=['POST', 'GET'])
 def signup():
