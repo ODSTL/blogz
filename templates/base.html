@@ -4,19 +4,30 @@
   <head>
     <h1>Blogz</h1>
     <style>
-        .error{
+        .error {
             color: red;
         }
     </style>
   </head>
   <body>
     <nav>
-      <a href="/">Main Page</a> |
-      <a href="/singleUser">Users</a> |
+      <a href="/singleUser">Main Page</a> |
+      <a href="/">Users</a> |
       <a href="/newpost">Add Post</a> |
-      <a href="/signup">SignUp</a> |
+      <a href="/signup">Sign Up</a> |
       <a href="/login">Login</a> |
       <a href="/logout">Logout</a>
     </nav>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
+    {% block content %}
+    {% endblock %}
+
   </body>
+
 </html>

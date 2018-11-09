@@ -6,14 +6,13 @@
       {% for post in blogs %}
 
       <h2>
-        <a href='/all_blogs?id={{post.id}}'>{{post.title}}</a>
-      <h2>
+      <a href='/all_blogs?id={{post.id}}'>{{post.title}}</a>
+      </h2>
 
       <p>{{post.body}}</p>
 
-      <p class='post-writer'></p>
       <p>Author:
-        <a href='/singleUser?user={{post.owner.id}}'>{{post.owner.username}}</a>
+      <a href='/singleUser?user={{post.owner.id}}'>{{post.owner.username}}</a>
       </p>
       {% endfor %}
     </ul>
